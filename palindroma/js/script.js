@@ -4,31 +4,35 @@ Creare una funzione per capire se la parola inserita è palindroma*/
 
 // 1 chiedere all'utente di inserire una parola
 
-var parola = "osso";
+var parolaUtente = prompt("inserisci una parola");
+
 // 2 verificare se parola è Palindroma
 
-var lettere = "";
-var inversa = "";
 
-for (var i = 0; i < parola.length; i++){
+function palindroma (parola){
 
-  lettere += parola[i];
-  console.log(parola[i]);
+  var lettere = "";
+  var inversa = "";
 
+  // credo ciclo per separare lettere
+  for (var i = 0; i < parola.length; i++){
+
+    lettere += parola[i];
+
+  }
+  // creo ciclo per invertire parola
+  for ( var j = parola.length - 1; j >= 0; j--) {
+    inversa += parola[j];
+
+  }
+  // verifico se la parola e la sua inversa sono uguali
+  if ( lettere === inversa ){
+
+    alert("la parola è palindroma");
+  } else{
+    alert("la parola non è palindroma");
+  }
 }
-console.log(lettere);
 
-for ( var j = parola.length - 1; j >= 0; j--) {
-  inversa += parola[j];
-  console.log(parola[j]);
-}
 
-console.log(inversa);
-
-if ( lettere === inversa ){
-
-  alert("la parola è polindroma");
-} else{
-  alert("la parola non è polindroma");
-}
-// 3 esito verificare
+palindroma(parolaUtente);
