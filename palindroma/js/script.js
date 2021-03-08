@@ -21,18 +21,22 @@ function palindroma (parola){
 
   }
   // creo ciclo per invertire parola
-  for ( var j = parola.length - 1; j >= 0; j--) {
+  for (var j = parola.length - 1; j >= 0; j--) {
+
     inversa += parola[j];
 
   }
   // verifico se la parola e la sua inversa sono uguali
-  if ( lettere === inversa ){
+    var esito = lettere === inversa;
 
-    alert("la parola è palindroma");
-  } else{
-    alert("la parola non è palindroma");
-  }
+    return esito;
 }
 
 
-palindroma(parolaUtente);
+var verifica = palindroma(parolaUtente);
+
+if(verifica){
+  alert("è una parola palindroma");
+} else{
+  alert("non è palindroma");
+}
