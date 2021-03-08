@@ -8,16 +8,19 @@ Dichiariamo chi ha vinto.*/
 
 
 
-var sceltaUtente = prompt("scegli tra 'pari' e 'dispari'");
 
-// trasformo in minuscolo
-var pariDispari = sceltaUtente.toLowerCase();
-// trasformo in minuscolo
+  do {
+
+    var sceltaUtente = prompt("scegli tra 'pari' e 'dispari'");
+
+  } while( sceltaUtente != "pari" && sceltaUtente != "dispari");
+
 
 // 2 utente sceglie numero tra 1 e 5
 
-var numeroUtente = parseInt(prompt("inserisci un numero da 1 a 5"));
-
+do{
+  var numeroUtente = parseInt(prompt("inserisci un numero da 1 a 5"));
+} while ( isNaN(numeroUtente) || numeroUtente > 5 || numeroUtente < 1);
 // 3 funzione che genera un numero random per il pc
 function numeroRandom (){
 
@@ -45,10 +48,10 @@ function verificaNumero (num){
 
   if( num % 2 == 0){
 
-    return true;
+    return "pari";
   }
   else{
-    return false;
+    return "dispari";
   }
 }
 //  /funzione che stabilisce se numero è pari o dispari
@@ -58,8 +61,8 @@ var verificaSomma = verificaNumero(somma);
 
 // 7 risultato del gioco
 
-if ( verificaSomma == true && pariDispari == "pari") {
+if ( verificaSomma == sceltaUtente) {
   alert("hai vinto");
-} else if  ( verificaSomma == false && pariDispari == "dispari"){
+} else {
   alert("hai perso");
 }
